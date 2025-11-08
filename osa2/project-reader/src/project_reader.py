@@ -17,6 +17,8 @@ class ProjectReader:
 
         name = data["tool"]["poetry"]["name"]
         description = data["tool"]["poetry"].get("description", "")
+        license = data["tool"]["poetry"].get("license", "")
+        authors = data["tool"]["poetry"].get("authors", [])
 
         dependencies = list(data["tool"]["poetry"]["dependencies"].keys())
         dev_group = data.get("dependency-groups", {}).get("dev", [])
@@ -26,6 +28,6 @@ class ProjectReader:
                 dev_dependencies.append(item.split()[0])
 
         # deserialisoi TOML-formaatissa oleva merkkijono ja muodosta Project-olio sen tietojen perusteella
-        return Project(name, description, dependencies, dev_dependencies)
+        return Project(name, description, license, authors, dependencies, dev_dependencies)
 
         
