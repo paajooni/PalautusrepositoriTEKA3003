@@ -2,7 +2,7 @@
 name = "Ohtutesting app"
 version = "0.1.0"
 description = "Sovellus joka toimii testisyötteenä ohtun osan 2 laskareihin"
-license = MIT
+license = "MIT"
 authors = ["Matti Luukkainen", "Kalle Ilves"]
 
 [tool.poetry.dependencies]
