@@ -12,9 +12,10 @@ class Project:
 
     def __str__(self):
         return (
+            "\n"
             f"Name: {self.name}"
             f"\nDescription: {self.description or '-'}"
-            f"\nLicense: {self.license or '-'}\n"
+            f"\nLicense: {self.license}\n"
             f"\nAuthors: {', '.join(self.authors) if len(self.authors) > 0 else '-'}\n"
             f"\nDependencies: {self._stringify_dependencies(self.dependencies)}\n"
             f"\nDevelopment dependencies: {self._stringify_dependencies(self.dev_dependencies)}"
